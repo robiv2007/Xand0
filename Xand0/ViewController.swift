@@ -15,6 +15,15 @@ class ViewController: UIViewController {
     var gameIsActive = true
     var count = 0
     
+    @IBOutlet weak var tap1: UIImageView!
+    @IBOutlet weak var tap2: UIImageView!
+    @IBOutlet weak var tap3: UIImageView!
+    @IBOutlet weak var tap4: UIImageView!
+    @IBOutlet weak var tap5: UIImageView!
+    @IBOutlet weak var tap6: UIImageView!
+    @IBOutlet weak var tap7: UIImageView!
+    @IBOutlet weak var tap8: UIImageView!
+    @IBOutlet weak var tap9: UIImageView!
     
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet var ImageView: UIView!
@@ -23,7 +32,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    
         
     }
    
@@ -60,11 +68,10 @@ class ViewController: UIViewController {
             }
            
        }
+        //AIPlayer()
         checkWinner()
     }
 
-        
-        
     func checkWinner()
     {
         for combination in winingCombinations
@@ -82,10 +89,9 @@ class ViewController: UIViewController {
                 winnerLabel.text = "ANDROID WON!!"
                 
                 }
-                
+        
             }
             
-           
         }
         
         if gameIsActive == true
@@ -97,10 +103,8 @@ class ViewController: UIViewController {
             }
         }
         
-        
     }
            
-    
     @IBAction func restartGameButton(_ sender: UIButton)
     {
         defaultSquares = [0,0,0,0,0,0,0,0,0]
@@ -116,7 +120,63 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    func AIPlayer() {
+          
+           var randomPick = Int.random(in: 0...8)
+           while (defaultSquares[randomPick] != 0 && count <= 8 )
+           {
+               
+                   randomPick = Int.random(in: 0...8)
+               
+           }
+           
+           defaultSquares[randomPick] = 2
+           activePlayer = 1
+           if count <= 8 {
+               count += 1}
+           
+           
+           switch randomPick
+           {
+           case 0:
+               tap1.image = UIImage(named: "android")
+           case 1:
+               tap2.image = UIImage(named: "android")
 
+           case 2:
+               tap3.image = UIImage(named: "android")
+
+           case 3:
+               tap4.image = UIImage(named: "android")
+
+           case 4:
+               tap5.image = UIImage(named: "android")
+
+           case 5:
+               tap6.image = UIImage(named: "android")
+
+           case 6:
+               tap7.image = UIImage(named: "android")
+
+           case 7:
+               tap8.image = UIImage(named: "android")
+
+           case 8:
+               tap9.image = UIImage(named: "android")
+
+               
+           default:
+               break
+               
+           }
+           print("Bot")
+           print(defaultSquares)
+           print(count)
+           print(gameIsActive)
+           
+           
+       }
 
 }
 

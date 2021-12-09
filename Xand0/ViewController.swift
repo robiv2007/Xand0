@@ -42,6 +42,7 @@ class ViewController: UIViewController {
         print("tap")
         
         let tappedImage = sender.view as! UIImageView
+       
         
         if (defaultSquares[tappedImage.tag-1] == 0) && gameIsActive == true
         {
@@ -70,16 +71,15 @@ class ViewController: UIViewController {
             }
            
        }
-        
-        print("check 1")
-        if singlePlayer == true{
+        if singlePlayer == true
+        {
             AIPlayer()
-            checkWinner()
-            print("check 2")
         }
         checkWinner()
-            
         
+        
+        
+    
     }
 
     func checkWinner()
@@ -99,18 +99,12 @@ class ViewController: UIViewController {
                 winnerLabel.text = "ANDROID WON!!"
                 
                 }
-        
             }
-            
         }
         
-        if gameIsActive == true
+        if gameIsActive == true && count == 9
         {
-            if count == 9
-                
-            {
                 winnerLabel.text = "IT'S A DRAW"
-            }
         }
         
     }
@@ -132,48 +126,67 @@ class ViewController: UIViewController {
     }
     
     func AIPlayer() {
-          
+        checkWinner()
+        
            var randomPick = Int.random(in: 0...8)
            while (defaultSquares[randomPick] != 0 && count <= 8 && gameIsActive == true)
            {
-               
-                   randomPick = Int.random(in: 0...8)
+               //randomPick = Int.random(in: 0...8)
+               for square in defaultSquares {
+                   if square == 0 && square != 1{
+                       
+                     randomPick = Int.random(in: 0...8)
+                   }
+               }
                
            }
            
-           defaultSquares[randomPick] = 2
            activePlayer = 1
-           if count <= 8 {
+           defaultSquares[randomPick] = 2
+           
+           if count <= 8  {
                count += 1}
            
-        if gameIsActive == true{
+        if count <= 8 && gameIsActive == true{
+            
             switch randomPick
             {
             case 0:
                 tap1.image = UIImage(named: "android")
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap1.image = UIImage(named: "android")} )
+                
             case 1:
                 tap2.image = UIImage(named: "android")
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap2.image = UIImage(named: "android")} )
 
             case 2:
                 tap3.image = UIImage(named: "android")
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap3.image = UIImage(named: "android")} )
 
             case 3:
                 tap4.image = UIImage(named: "android")
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap4.image = UIImage(named: "android")} )
 
             case 4:
                 tap5.image = UIImage(named: "android")
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap5.image = UIImage(named: "android")} )
 
             case 5:
                 tap6.image = UIImage(named: "android")
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap6.image = UIImage(named: "android")} )
+                
 
             case 6:
                 tap7.image = UIImage(named: "android")
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap7.image = UIImage(named: "android")} )
 
             case 7:
                 tap8.image = UIImage(named: "android")
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap8.image = UIImage(named: "android")} )
 
             case 8:
                 tap9.image = UIImage(named: "android")
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap9.image = UIImage(named: "android")} )
 
                 
             default:
@@ -182,6 +195,7 @@ class ViewController: UIViewController {
             }
             
         }
+        
           
            print("Bot")
            print(defaultSquares)

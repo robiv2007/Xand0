@@ -16,6 +16,7 @@
 		B32FE03F274D1AC000585A63 /* Xand0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32FE03E274D1AC000585A63 /* Xand0Tests.swift */; };
 		B32FE049274D1AC000585A63 /* Xand0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32FE048274D1AC000585A63 /* Xand0UITests.swift */; };
 		B32FE04B274D1AC000585A63 /* Xand0UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32FE04A274D1AC000585A63 /* Xand0UITestsLaunchTests.swift */; };
+		B351D5242761F5EA006FDC88 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B351D5232761F5EA006FDC88 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B32FE044274D1AC000585A63 /* Xand0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Xand0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32FE048274D1AC000585A63 /* Xand0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xand0UITests.swift; sourceTree = "<group>"; };
 		B32FE04A274D1AC000585A63 /* Xand0UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xand0UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B351D5232761F5EA006FDC88 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				B32FE030274D1ABF00585A63 /* Assets.xcassets */,
 				B32FE032274D1ABF00585A63 /* LaunchScreen.storyboard */,
 				B32FE035274D1ABF00585A63 /* Info.plist */,
+				B351D5232761F5EA006FDC88 /* StartViewController.swift */,
 			);
 			path = Xand0;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B32FE02C274D1AB300585A63 /* ViewController.swift in Sources */,
+				B351D5242761F5EA006FDC88 /* StartViewController.swift in Sources */,
 				B32FE028274D1AB300585A63 /* AppDelegate.swift in Sources */,
 				B32FE02A274D1AB300585A63 /* SceneDelegate.swift in Sources */,
 			);

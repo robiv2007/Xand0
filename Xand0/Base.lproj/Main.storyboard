@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="aov-b4-2cc">
             <objects>
-                <viewController id="mTa-47-u4E" sceneMemberID="viewController">
+                <viewController id="mTa-47-u4E" customClass="StartViewController" customModule="Xand0" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Ub-vT-CqB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                     <color key="baseForegroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="WsM-U7-aPo"/>
+                                    <action selector="twoPlayersButton:" destination="mTa-47-u4E" eventType="touchUpInside" id="H9Y-Yx-bVu"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="vs" translatesAutoresizingMaskIntoConstraints="NO" id="YLw-25-89v">
@@ -47,7 +47,7 @@
                                     <color key="baseForegroundColor" systemColor="systemGroupedBackgroundColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="HCI-MF-PUR"/>
+                                    <action selector="onePlayerButton:" destination="mTa-47-u4E" eventType="touchUpInside" id="J6k-Yg-Vdd"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIC TAC TOE " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNB-DM-d28">
@@ -58,7 +58,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qJg-z3-yYQ" colorLabel="IBBuiltInLabel-Gray"/>
-                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.96544673167118411" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qJg-z3-yYQ" firstAttribute="bottom" secondItem="pI2-cQ-GQb" secondAttribute="bottom" constant="222" id="FDD-dC-jnK"/>
                             <constraint firstItem="pI2-cQ-GQb" firstAttribute="leading" secondItem="qJg-z3-yYQ" secondAttribute="leading" constant="87" id="GIb-EP-shm"/>
@@ -71,6 +71,9 @@
                             <constraint firstItem="qJg-z3-yYQ" firstAttribute="trailing" secondItem="pI2-cQ-GQb" secondAttribute="trailing" constant="87" id="wSP-Mb-psv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToGame" id="Cwf-me-jgJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqa-2c-wgv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -253,9 +256,6 @@
             <point key="canvasLocation" x="18.840579710144929" y="68.973214285714278"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="HCI-MF-PUR"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="square" width="1078" height="1068"/>
         <image name="vs" width="860" height="325"/>
@@ -273,9 +273,6 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

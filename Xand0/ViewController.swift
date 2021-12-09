@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     var winingCombinations = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
     var gameIsActive = true
     var count = 0
+    var singlePlayer = false
+    
     
     @IBOutlet weak var tap1: UIImageView!
     @IBOutlet weak var tap2: UIImageView!
@@ -68,8 +70,16 @@ class ViewController: UIViewController {
             }
            
        }
-        //AIPlayer()
+        
+        print("check 1")
+        if singlePlayer == true{
+            AIPlayer()
+            checkWinner()
+            print("check 2")
+        }
         checkWinner()
+            
+        
     }
 
     func checkWinner()
@@ -124,7 +134,7 @@ class ViewController: UIViewController {
     func AIPlayer() {
           
            var randomPick = Int.random(in: 0...8)
-           while (defaultSquares[randomPick] != 0 && count <= 8 )
+           while (defaultSquares[randomPick] != 0 && count <= 8 && gameIsActive == true)
            {
                
                    randomPick = Int.random(in: 0...8)
@@ -136,40 +146,43 @@ class ViewController: UIViewController {
            if count <= 8 {
                count += 1}
            
-           
-           switch randomPick
-           {
-           case 0:
-               tap1.image = UIImage(named: "android")
-           case 1:
-               tap2.image = UIImage(named: "android")
+        if gameIsActive == true{
+            switch randomPick
+            {
+            case 0:
+                tap1.image = UIImage(named: "android")
+            case 1:
+                tap2.image = UIImage(named: "android")
 
-           case 2:
-               tap3.image = UIImage(named: "android")
+            case 2:
+                tap3.image = UIImage(named: "android")
 
-           case 3:
-               tap4.image = UIImage(named: "android")
+            case 3:
+                tap4.image = UIImage(named: "android")
 
-           case 4:
-               tap5.image = UIImage(named: "android")
+            case 4:
+                tap5.image = UIImage(named: "android")
 
-           case 5:
-               tap6.image = UIImage(named: "android")
+            case 5:
+                tap6.image = UIImage(named: "android")
 
-           case 6:
-               tap7.image = UIImage(named: "android")
+            case 6:
+                tap7.image = UIImage(named: "android")
 
-           case 7:
-               tap8.image = UIImage(named: "android")
+            case 7:
+                tap8.image = UIImage(named: "android")
 
-           case 8:
-               tap9.image = UIImage(named: "android")
+            case 8:
+                tap9.image = UIImage(named: "android")
 
-               
-           default:
-               break
-               
-           }
+                
+            default:
+                break
+                
+            }
+            
+        }
+          
            print("Bot")
            print(defaultSquares)
            print(count)

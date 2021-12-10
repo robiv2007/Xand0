@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pI2-cQ-GQb">
-                                <rect key="frame" x="87" y="590" width="240" height="50"/>
+                                <rect key="frame" x="87" y="549" width="240" height="50"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="TWO PLAYERS">
                                     <backgroundConfiguration key="background">
@@ -36,7 +36,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qc9-LO-BEb">
-                                <rect key="frame" x="87" y="502" width="240" height="50"/>
+                                <rect key="frame" x="87" y="461" width="240" height="50"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="ONE PLAYER">
                                     <backgroundConfiguration key="background">
@@ -56,22 +56,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Player 1 name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0T-RX-sh3">
+                                <rect key="frame" x="87" y="647" width="240" height="41"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Player 2 name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Yq-po-Tdv">
+                                <rect key="frame" x="87" y="711" width="240" height="41"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qJg-z3-yYQ" colorLabel="IBBuiltInLabel-Gray"/>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.96544673167118411" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qJg-z3-yYQ" firstAttribute="bottom" secondItem="pI2-cQ-GQb" secondAttribute="bottom" constant="222" id="FDD-dC-jnK"/>
+                            <constraint firstItem="qJg-z3-yYQ" firstAttribute="bottom" secondItem="9Yq-po-Tdv" secondAttribute="bottom" constant="110" id="2KR-Kz-k7p"/>
                             <constraint firstItem="pI2-cQ-GQb" firstAttribute="leading" secondItem="qJg-z3-yYQ" secondAttribute="leading" constant="87" id="GIb-EP-shm"/>
+                            <constraint firstItem="9Yq-po-Tdv" firstAttribute="top" secondItem="J0T-RX-sh3" secondAttribute="bottom" constant="23" id="I2Q-iH-ed3"/>
+                            <constraint firstItem="J0T-RX-sh3" firstAttribute="top" secondItem="pI2-cQ-GQb" secondAttribute="bottom" constant="48" id="IzH-4g-dMn"/>
                             <constraint firstItem="qJg-z3-yYQ" firstAttribute="trailing" secondItem="qc9-LO-BEb" secondAttribute="trailing" constant="87" id="JrQ-yA-Q2C"/>
+                            <constraint firstItem="J0T-RX-sh3" firstAttribute="leading" secondItem="qJg-z3-yYQ" secondAttribute="leading" constant="87" id="Nl5-nH-ncn"/>
+                            <constraint firstItem="qJg-z3-yYQ" firstAttribute="trailing" secondItem="J0T-RX-sh3" secondAttribute="trailing" constant="87" id="Qfm-Dg-Sro"/>
                             <constraint firstItem="pI2-cQ-GQb" firstAttribute="top" secondItem="qc9-LO-BEb" secondAttribute="bottom" constant="38" id="VvL-NF-FDN"/>
                             <constraint firstItem="PNB-DM-d28" firstAttribute="top" secondItem="qJg-z3-yYQ" secondAttribute="top" constant="70" id="fmL-q6-1vB"/>
                             <constraint firstItem="PNB-DM-d28" firstAttribute="leading" secondItem="qJg-z3-yYQ" secondAttribute="leading" constant="50" id="gsK-Bi-ehr"/>
+                            <constraint firstItem="9Yq-po-Tdv" firstAttribute="leading" secondItem="qJg-z3-yYQ" secondAttribute="leading" constant="87" id="hMS-m5-jZD"/>
+                            <constraint firstItem="qJg-z3-yYQ" firstAttribute="trailing" secondItem="9Yq-po-Tdv" secondAttribute="trailing" constant="87" id="l3N-la-OCO"/>
                             <constraint firstItem="qJg-z3-yYQ" firstAttribute="trailing" secondItem="PNB-DM-d28" secondAttribute="trailing" constant="50" id="mIb-qK-1Hv"/>
                             <constraint firstItem="qc9-LO-BEb" firstAttribute="leading" secondItem="qJg-z3-yYQ" secondAttribute="leading" constant="87" id="uQH-ar-saU"/>
                             <constraint firstItem="qJg-z3-yYQ" firstAttribute="trailing" secondItem="pI2-cQ-GQb" secondAttribute="trailing" constant="87" id="wSP-Mb-psv"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="playerOneText" destination="J0T-RX-sh3" id="3NG-gm-T4k"/>
+                        <outlet property="playerTwoText" destination="9Yq-po-Tdv" id="A0E-d5-Crf"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueToGame" id="Cwf-me-jgJ"/>
                     </connections>
                 </viewController>
@@ -259,6 +279,9 @@
     <resources>
         <image name="square" width="1078" height="1068"/>
         <image name="vs" width="860" height="325"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="separatorColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

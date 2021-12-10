@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     var gameIsActive = true
     var count = 0
     var singlePlayer = false
+    var playerOneName : String = ""
+    var playerTwoName : String = ""
+    
     
     
     @IBOutlet weak var tap1: UIImageView!
@@ -48,10 +51,12 @@ class ViewController: UIViewController {
         {
             defaultSquares[tappedImage.tag-1] = activePlayer
             
-            if activePlayer == 1
+            if activePlayer == 1 
             {
+                
                 if let image = UIImage(named: "ios")
                 {
+                    winnerLabel.text = playerTwoName + "'s turn"
                     tappedImage.image = image
                     print("image")
                     count += 1
@@ -61,6 +66,7 @@ class ViewController: UIViewController {
             }
             else
             {
+                winnerLabel.text = playerOneName + "'s turn"
                 if let image = UIImage(named: "android")
                 {
                     tappedImage.image = image
@@ -71,7 +77,7 @@ class ViewController: UIViewController {
             }
            
        }
-        if singlePlayer == true
+        if singlePlayer == true 
         {
             AIPlayer()
         }
@@ -90,15 +96,20 @@ class ViewController: UIViewController {
             {
                 gameIsActive = false
             
-            if defaultSquares[combination[0]] == 1
+            if defaultSquares[combination[0]] == 1 
                 {
-                winnerLabel.text = "APPLE WON!"
-                
+                winnerLabel.text = playerOneName + " WINS!"
                 }
-            else{
-                winnerLabel.text = "ANDROID WON!!"
-                
+               
+                else
+                {
+                   winnerLabel.text = playerTwoName + " WINS!"
                 }
+
+                
+               
+                
+                
             }
         }
         
@@ -127,18 +138,12 @@ class ViewController: UIViewController {
     
     func AIPlayer() {
         checkWinner()
-        
+           
            var randomPick = Int.random(in: 0...8)
            while (defaultSquares[randomPick] != 0 && count <= 8 && gameIsActive == true)
            {
-               //randomPick = Int.random(in: 0...8)
-               for square in defaultSquares {
-                   if square == 0 && square != 1{
-                       
-                     randomPick = Int.random(in: 0...8)
-                   }
-               }
-               
+               randomPick = Int.random(in: 0...8)
+
            }
            
            activePlayer = 1
@@ -147,48 +152,50 @@ class ViewController: UIViewController {
            if count <= 8  {
                count += 1}
            
-        if count <= 8 && gameIsActive == true{
+        if count <= 8 && gameIsActive == true 
+        {
             
             switch randomPick
             {
             case 0:
-                tap1.image = UIImage(named: "android")
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap1.image = UIImage(named: "android")} )
-                
+                //tap1.image = UIImage(named: "android")
+                 
+               DispatchQueue.main.asyncAfter(deadline: .now() + 0.5,                execute:{self.tap1.image = UIImage(named: "android")} )
+
             case 1:
-                tap2.image = UIImage(named: "android")
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap2.image = UIImage(named: "android")} )
+                //tap2.image = UIImage(named: "android")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:{self.tap2.image = UIImage(named: "android")} )
 
             case 2:
-                tap3.image = UIImage(named: "android")
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap3.image = UIImage(named: "android")} )
+                //tap3.image = UIImage(named: "android")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:{self.tap3.image = UIImage(named: "android")} )
 
             case 3:
-                tap4.image = UIImage(named: "android")
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap4.image = UIImage(named: "android")} )
+               //tap4.image = UIImage(named: "android")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:{self.tap4.image = UIImage(named: "android")} )
 
             case 4:
-                tap5.image = UIImage(named: "android")
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap5.image = UIImage(named: "android")} )
+                //tap5.image = UIImage(named: "android")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:{self.tap5.image = UIImage(named: "android")} )
 
             case 5:
-                tap6.image = UIImage(named: "android")
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap6.image = UIImage(named: "android")} )
-                
+                //tap6.image = UIImage(named: "android")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:{self.tap6.image = UIImage(named: "android")} )
+
 
             case 6:
-                tap7.image = UIImage(named: "android")
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap7.image = UIImage(named: "android")} )
+                //tap7.image = UIImage(named: "android")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:{self.tap7.image = UIImage(named: "android")} )
 
             case 7:
-                tap8.image = UIImage(named: "android")
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap8.image = UIImage(named: "android")} )
+                //tap8.image = UIImage(named: "android")
+               DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:{self.tap8.image = UIImage(named: "android")} )
 
             case 8:
-                tap9.image = UIImage(named: "android")
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute:{self.tap9.image = UIImage(named: "android")} )
+                //tap9.image = UIImage(named: "android")
+               DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute:{self.tap9.image = UIImage(named: "android")} )
 
-                
+
             default:
                 break
                 
@@ -204,6 +211,7 @@ class ViewController: UIViewController {
            
            
        }
+    
 
 }
 
